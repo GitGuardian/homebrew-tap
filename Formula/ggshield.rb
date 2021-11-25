@@ -1,10 +1,10 @@
 class Ggshield < Formula
   include Language::Python::Virtualenv
 
-  desc "Detect secret in source code, scan your repos and docker images for leaks"
+  desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/13/c1/448bea37e8aa8942ef1859ad5d6820b591b816d0c9e04ea3aea898cf1717/ggshield-1.10.5.tar.gz"
-  sha256 "6bad67613787faa849602e4569880418eee869840bb2da9e78d2342c56fd7b27"
+  url "https://files.pythonhosted.org/packages/f0/98/3024959a8c01253a168f8b1941daefd9f63d0ec2c433f4d4e3568355c3e2/ggshield-1.10.7.tar.gz"
+  sha256 "e002577bf434be85baef737970d387efd95ea094b08b93399be577d2bb5a7f0e"
   license "MIT"
 
   depends_on "python3"
@@ -15,8 +15,8 @@ class Ggshield < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/9f/c5/334c019f92c26e59637bb42bd14a190428874b2b2de75a355da394cf16c1/charset-normalizer-2.0.7.tar.gz"
-    sha256 "e019de665e2bcf9c2b64e2e5aa025fa991da8720daa3c1138cadd2fd1856aed0"
+    url "https://files.pythonhosted.org/packages/2f/39/5d8ff929409113e9ff402e405a7c7880ab1fa6f118a4ab72443976a01711/charset-normalizer-2.0.8.tar.gz"
+    sha256 "735e240d9a8506778cd7a453d97e817e536bb1fc29f4f6961ce297b9c7a917b0"
   end
 
   resource "click" do
