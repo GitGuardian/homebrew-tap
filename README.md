@@ -10,7 +10,7 @@ A tap is a third-party repository providing installable packages. For more infor
 
 ## How to install packages from GitGuardian's tap ?  
 #### Straight to the point
-Tyope this one-liner to quickly install your package.  
+Type this one-liner to quickly install your package.  
 ```sh
 brew install gitguardian/tap/PACKAGE_NAME
 ```
@@ -25,7 +25,7 @@ This command adds GitGuardian's tap to your taps, and it makes GitGuardian's pac
 brew install PACKAGE_NAME
 ```
 
-## How to upgrate a package from Homebrew ?
+## How to upgrade a package from Homebrew ?
 ```sh
 brew update
 brew upgrade PACKAGE_NAME
