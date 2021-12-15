@@ -5,20 +5,20 @@
 class SrcFingerprint < Formula
   desc "src-fingerprint is a CLI util to easily compute the fileshas associated to a set of git repositories."
   homepage ""
-  version "0.10.0"
+  version "0.11.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.10.0/src-fingerprint_0.10.0_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "1034c850a906c9ba474b080ee0bd00828f16c44353d8a608063b9351d5a8eb31"
+    if Hardware::CPU.arm?
+      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.11.0/src-fingerprint_0.11.0_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "b8e118166d70ed21e35dc1bb109f53463ab61ecc8cd64cb8a82cc6f39ed5f511"
 
       def install
         bin.install "src-fingerprint"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.10.0/src-fingerprint_0.10.0_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "6bb9dfacc2a02827a393ebe0a07a8724b4551aa38124b73eb63b703258c1fe2a"
+    if Hardware::CPU.intel?
+      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.11.0/src-fingerprint_0.11.0_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "016bc345f83aae7efd011ca98f1dd98fe7da47e5bc6d00af0382fd589756f0b1"
 
       def install
         bin.install "src-fingerprint"
@@ -27,17 +27,17 @@ class SrcFingerprint < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.10.0/src-fingerprint_0.10.0_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "4cc66016a98ad291cad4f5821c57518c13708ce7e559ffb06dd01fc01c68d7c9"
+    if Hardware::CPU.intel?
+      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.11.0/src-fingerprint_0.11.0_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "e0cba51ac908d45f7104aeeb935d82f43e164eb22950128af61aa401933b4f53"
 
       def install
         bin.install "src-fingerprint"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.10.0/src-fingerprint_0.10.0_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "84e7a9c506d916d31d9aaa913a402106737bdd3b5e995040c4bdb85e39e1a885"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/GitGuardian/src-fingerprint/releases/download/v0.11.0/src-fingerprint_0.11.0_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "b1445e7033bff88b490b2e484a7932011278f982338c394640afb961e2d61637"
 
       def install
         bin.install "src-fingerprint"
