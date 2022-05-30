@@ -3,15 +3,20 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/c0/00/a4e3b3094c160881b5144ce354e34796632d49b8cb50664bdf0f4aca794e/ggshield-1.11.0.tar.gz"
-  sha256 "56cc3986834fdb39a349eee1e86d9fe28d013465bd5b8aa4b8e2fcce1bd7c9c4"
+  url "https://files.pythonhosted.org/packages/5b/d4/1dcb16849bb264757374bc70d2428fc92e42abcfb3645f1b12b1c4367e58/ggshield-1.12.0.tar.gz"
+  sha256 "1ae866a4db9630297b4fb8cdfc0489a58b8c472d4902e24084dc823ad2d87413"
   license "MIT"
 
   depends_on "python3"
 
+  resource "appdirs" do
+    url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
+    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
+  end
+
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/07/10/75277f313d13a2b74fc56e29239d5c840c2bf09f17bf25c02b35558812c6/certifi-2022.5.18.1.tar.gz"
+    sha256 "9c5705e395cd70084351dd8ad5c41e65655e08ce46f2ec9cf6c2c08390f71eb7"
   end
 
   resource "charset-normalizer" do
@@ -30,8 +35,13 @@ class Ggshield < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/ef/d1/3c7c7d0ed4470c49c971cb5db4c5becdc37bd3969946bba434216c56c08c/marshmallow-3.15.0.tar.gz"
-    sha256 "2aaaab4f01ef4f5a011a21319af9fce17ab13bf28a026d1252adab0e035648d5"
+    url "https://files.pythonhosted.org/packages/a7/c9/59fe5693b3973861f3c9aa6ea6d616a6922d076d53a09359611034782840/marshmallow-3.16.0.tar.gz"
+    sha256 "a762c1d8b2bcb0e5c8e964850d03f9f3bffd6a12b626f3c14b9d6b1841999af5"
+  end
+
+  resource "oauthlib" do
+    url "https://files.pythonhosted.org/packages/6e/7e/a43cec8b2df28b6494a865324f0ac4be213cb2edcf1e2a717547a93279b0/oauthlib-3.2.0.tar.gz"
+    sha256 "23a8208d75b902797ea29fd31fa80a15ed9dc2c6c16fe73f5d346f83f6fa27a2"
   end
 
   resource "packaging" do
@@ -45,8 +55,8 @@ class Ggshield < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/d6/60/9bed18f43275b34198eb9720d4c1238c68b3755620d20df0afd89424d32b/pyparsing-3.0.7.tar.gz"
-    sha256 "18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "python-dotenv" do
