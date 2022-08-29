@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/68/4b/c16eb3dc7a00b4560a54c6e0f07d762534f0706953437befeed518cbcb72/ggshield-1.13.0.tar.gz"
-  sha256 "61b5151f0fa24fb8ce3febbb7c192ca61cb48bee42255b4de52269f9da98a688"
+  url "https://files.pythonhosted.org/packages/18/89/38ebdd7d5bb2b86b27de483226a022b069e4bd4979de480ba1c6930afe55/ggshield-1.13.1.tar.gz"
+  sha256 "2ab3e44cebf485b050fb84293c933337700079d774fc069024ab301c4a410ab0"
   license "MIT"
 
   depends_on "python3"
@@ -20,8 +20,8 @@ class Ggshield < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/93/1d/d9392056df6670ae2a29fcb04cfa5cee9f6fbde7311a1bb511d4115e9b7a/charset-normalizer-2.1.0.tar.gz"
-    sha256 "575e708016ff3a5e3681541cb9d79312c416835686d054a23accb873b254f413"
+    url "https://files.pythonhosted.org/packages/a1/34/44964211e5410b051e4b8d2869c470ae8a68ae274953b1c7de6d98bbcf94/charset-normalizer-2.1.1.tar.gz"
+    sha256 "5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"
   end
 
   resource "click" do
@@ -90,13 +90,13 @@ class Ggshield < Formula
   end
 
   resource "typing-inspect" do
-    url "https://files.pythonhosted.org/packages/c3/da/864ce66818e308b38209d4b1ef0585921d28eb07621ba7d905a0e96bcc80/typing_inspect-0.7.1.tar.gz"
-    sha256 "047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa"
+    url "https://files.pythonhosted.org/packages/72/23/bed3ea644bcd77ffe9a7f591eb058c00739747e33ab94d80cc4319ddee8e/typing_inspect-0.8.0.tar.gz"
+    sha256 "8b1ff0c400943b6145df8119c41c244ca8207f1f10c9c057aeed1560e4806e3d"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/25/36/f056e5f1389004cf886bb7a8514077f24224238a7534497c014a6b9ac770/urllib3-1.26.10.tar.gz"
-    sha256 "879ba4d1e89654d9769ce13121e0f94310ea32e8d2f8cf587b77c08bbcdb30d6"
+    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
+    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
   end
 
   def install
