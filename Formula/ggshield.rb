@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/db/08/c73aab71a9b8b685eccbcb17ac9fce72d33dd85c0ae9db3da65bbd746fba/ggshield-1.13.2.tar.gz"
-  sha256 "60daaab6ef488fa97a4b720bcc63a1171a20a234621381d2c06e6fc6bb27bcaf"
+  url "https://files.pythonhosted.org/packages/bd/b3/3d16bcaf5f89784256cbed67411cbec9557cf21d0d841bfb835995d0e881/ggshield-1.13.3.tar.gz"
+  sha256 "23c32979ad671c8ea780deda7c435671812e7fe34264cdf3c67457f770c14cc5"
   license "MIT"
 
   depends_on "python3"
@@ -15,8 +15,8 @@ class Ggshield < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/05/a8/e0966dcf948a9ab9321f23f121a37b96be191b15dc28e9134927fd42a8af/certifi-2022.6.15.2.tar.gz"
-    sha256 "aa08c101214127b9b0472ca6338315113c9487d45376fd3e669201b477c71003"
+    url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
+    sha256 "0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"
   end
 
   resource "charset-normalizer" do
@@ -27,6 +27,11 @@ class Ggshield < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/dd/cf/706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0/click-8.0.4.tar.gz"
     sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
+  end
+
+  resource "commonmark" do
+    url "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz"
+    sha256 "452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"
   end
 
   resource "idna" do
@@ -40,8 +45,8 @@ class Ggshield < Formula
   end
 
   resource "marshmallow-dataclass" do
-    url "https://files.pythonhosted.org/packages/15/90/fd797aa83ebb7bd8bad64eb328dbadae8826f5eff5958c2956b61d66337c/marshmallow_dataclass-8.5.8.tar.gz"
-    sha256 "b12dc2ca9492d0d8f98577e185dee3189d8bb02f4909e475f56ed4bf7b7d5a83"
+    url "https://files.pythonhosted.org/packages/8e/57/45c1bc40782aae3d13a73f4bbab5c851dc348b34ccabd377ef8a21781c9d/marshmallow_dataclass-8.5.9.tar.gz"
+    sha256 "68493f6f8bac0a87043a15d1d702927a61736926043766a92c5da51f19dd8fee"
   end
 
   resource "mypy-extensions" do
@@ -64,6 +69,11 @@ class Ggshield < Formula
     sha256 "cb33e5de4238dc82480aafe0815de4cb3bdbbd2533ff8378ecc8e835dcc80ef6"
   end
 
+  resource "Pygments" do
+    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
+    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
+  end
+
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
     sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
@@ -84,9 +94,14 @@ class Ggshield < Formula
     sha256 "7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"
   end
 
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/bb/2d/c902484141330ded63c6c40d66a9725f8da5e818770f67241cf429eef825/rich-12.5.1.tar.gz"
+    sha256 "63a5c5ce3673d3d5fbbf23cd87e11ab84b6b451436f1b7f19ec54b6bc36ed7ca"
+  end
+
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/9e/1d/d128169ff58c501059330f1ad96ed62b79114a2eb30b8238af63a2e27f70/typing_extensions-4.3.0.tar.gz"
-    sha256 "e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
+    url "https://files.pythonhosted.org/packages/e3/a7/8f4e456ef0adac43f452efc2d0e4b242ab831297f1bac60ac815d37eb9cf/typing_extensions-4.4.0.tar.gz"
+    sha256 "1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa"
   end
 
   resource "typing-inspect" do
