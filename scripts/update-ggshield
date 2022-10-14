@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+"""
+Update ggshield Homebrew formula
+"""
+import argparse
+import json
+import logging
+import sys
+import time
+
+from pathlib import Path
+from subprocess import run
+from urllib import request
+
+MAX_RETRIES = 5
+RETRY_INITIAL_INTERVAL = 10
+PYPI_URL = "https://pypi.org/pypi/ggshield/json"
+
+FORMULA_PATH = Path(__file__).parent / ".." / "Formula" / "ggshield.rb"
+DESCRIPTION = (
+    "Detect secrets in source code, scan your repos and docker images for leaks"
+)
+LICENSE = "MIT"
+
+
+def install_dependencies(version: str):
+    logging.info("Installing dependencies")
+    run(["pip", "install", "homebrew-pypi-poet", f"ggshield=={version}"], check=True)
+
+
+def check_availability(version: str):
+    """Wait until pypi officially knows about the new version, otherwise poet
+    prints a warning and falls back on the previous version"""
+    retry = 1
+    interval = RETRY_INITIAL_INTERVAL
+    while True:
+        logging.info(
+            "Checking if ggshield %s is available on pypi (%d/%d)",
+            version,
+            retry,
+            MAX_RETRIES,
+        )
+        response = request.urlopen(PYPI_URL)
+        dct = json.load(response)
+        releases = dct["releases"]
+        if version in releases:
+            logging.info("ggshield %s is available", version)
+            return
+
+        if retry < MAX_RETRIES:
+            logging.warning("Not available yet, waiting %d seconds", interval)
+            time.sleep(interval)
+            retry += 1
+            interval *= 2
+        else:
+            logging.error("ggshield %s is not available on pypi", version)
+            sys.exit(2)
+
+
+def update_formula():
+    logging.info("Updating %s", FORMULA_PATH)
+
+    # Generate the new formula
+    proc = run(["poet", "--formula", "ggshield"], check=True, capture_output=True)
+    content = proc.stdout.decode("utf-8")
+
+    # Replace description
+    content = content.replace("Shiny new formula", DESCRIPTION)
+    lines = content.split("\n")
+
+    # Insert license line at the end of the first group. The group should end
+    # with a "sha256" entry
+    assert "sha256" in lines[6]
+    lines.insert(7, f'  license "{LICENSE}"')
+    content = "\n".join(lines)
+
+    # Write the result
+    FORMULA_PATH.write_text(content)
+
+
+def commit_changes(version: str):
+    logging.info("Committing changes")
+    run(["git", "add", FORMULA_PATH], check=True)
+    run(["git", "commit", "-m", f"chore: update ggshield to {version}"], check=True)
+
+
+def main():
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt='%H:%M:%S')
+
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter, description=__doc__
+    )
+    parser.add_argument("-c", "--commit", action="store_true", help="Commit changes")
+    parser.add_argument("version", help="ggshield version")
+    args = parser.parse_args()
+
+    if not FORMULA_PATH.exists():
+        logging.error("%s does not exist", FORMULA_PATH)
+        sys.exit(1)
+
+    check_availability(args.version)
+    install_dependencies(args.version)
+    update_formula()
+    if args.commit:
+        commit_changes(args.version)
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+# vi: ts=4 sw=4 et
