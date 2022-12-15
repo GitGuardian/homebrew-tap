@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/43/a3/94753efe25c7a2e89e52c64446de4addd5894f26f6d410732ef24a056794/ggshield-1.14.1.tar.gz"
-  sha256 "9fb9bd04f4b5335ddd04ff15853537bea2d46dceeb6f17b7df0ab4819bc13131"
+  url "https://files.pythonhosted.org/packages/26/21/938d31c9c31f645a85f5cbc0c5682b4fe375231d2d98036be0914caa23a2/ggshield-1.14.2.tar.gz"
+  sha256 "2e6ecfe22137aee56d1739fd2f8eee35e51fa8bd9d36f6d8e59b948a7ad6f6cc"
   license "MIT"
 
   depends_on "python3"
@@ -15,8 +15,8 @@ class Ggshield < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
-    sha256 "0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"
+    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
+    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "charset-normalizer" do
@@ -60,23 +60,18 @@ class Ggshield < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
+    url "https://files.pythonhosted.org/packages/6b/f7/c240d7654ddd2d2f3f328d8468d4f1f876865f6b9038b146bec0a6737c65/packaging-22.0.tar.gz"
+    sha256 "2198ec20bd4c017b8f9717e00f0c8714076fc2fd93816750ab48e2c41de2cfd3"
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/1b/b7/c8cdc7aa488566b8771b73ca99b7387bd482171f6a713929f4289d16c9c5/pygitguardian-1.4.0.tar.gz"
-    sha256 "3ebb7e69f3060c981b92ba5011d9c704b0153f582cdca2cc9d553891794af7f3"
+    url "https://files.pythonhosted.org/packages/3c/de/939a1f68a8e0499338ff2ffacdacc1279228657cc43aae93d2ac5e87c857/pygitguardian-1.5.0.tar.gz"
+    sha256 "0ec192536def0b9a70a68a770684d3b7eadff7b03257a92ab3efbcda70c59e60"
   end
 
   resource "Pygments" do
     url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
     sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "python-dotenv" do
@@ -110,8 +105,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b2/56/d87d6d3c4121c0bcec116919350ca05dc3afd2eeb7dc88d07e8083f8ea94/urllib3-1.26.12.tar.gz"
-    sha256 "3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"
+    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
+    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
   end
 
   def install
