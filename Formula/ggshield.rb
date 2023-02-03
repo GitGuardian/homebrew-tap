@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/26/21/938d31c9c31f645a85f5cbc0c5682b4fe375231d2d98036be0914caa23a2/ggshield-1.14.2.tar.gz"
-  sha256 "2e6ecfe22137aee56d1739fd2f8eee35e51fa8bd9d36f6d8e59b948a7ad6f6cc"
+  url "https://files.pythonhosted.org/packages/b8/aa/7e2e57d809e2bf775d1ec7eece87ddcf9173f1f7e74ec4f5f2af3afa0f23/ggshield-1.14.3.tar.gz"
+  sha256 "3dda211d707263c5cff1538f2fc20bbc0e47a38e6ed779ab57ccd1ae14f33aa9"
   license "MIT"
 
   depends_on "python3"
@@ -45,8 +45,8 @@ class Ggshield < Formula
   end
 
   resource "marshmallow-dataclass" do
-    url "https://files.pythonhosted.org/packages/25/01/d1bc4b05b82f1d2c423f5921780d807d3bb3b694d8884d7a454971614250/marshmallow_dataclass-8.5.10.tar.gz"
-    sha256 "a7ab243fcb12cf2fe07dce852a0e8d91bfcb02e2447e629eb8752554dd20f106"
+    url "https://files.pythonhosted.org/packages/bc/aa/7a61c424d6f4af1d05cb1b5df5b0f711faf04d586ad0787c4dd956732fd8/marshmallow_dataclass-8.5.11.tar.gz"
+    sha256 "b7b0ee28fa9e88edd00db324762848d3182fe5dba82c3b897cb525c402ffd143"
   end
 
   resource "mypy-extensions" do
@@ -60,8 +60,8 @@ class Ggshield < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/6b/f7/c240d7654ddd2d2f3f328d8468d4f1f876865f6b9038b146bec0a6737c65/packaging-22.0.tar.gz"
-    sha256 "2198ec20bd4c017b8f9717e00f0c8714076fc2fd93816750ab48e2c41de2cfd3"
+    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
+    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
   end
 
   resource "pygitguardian" do
@@ -70,13 +70,13 @@ class Ggshield < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
+    url "https://files.pythonhosted.org/packages/da/6a/c427c06913204e24de28de5300d3f0e809933f376e0b7df95194b2bb3f71/Pygments-2.14.0.tar.gz"
+    sha256 "b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/87/8d/ab7352188f605e3f663f34692b2ed7457da5985857e9e4c2335cd12fb3c9/python-dotenv-0.21.0.tar.gz"
-    sha256 "b77d08274639e3d34145dfa6c7008e66df0f04b7be7a75fd0d5292c191d79045"
+    url "https://files.pythonhosted.org/packages/f5/d7/d548e0d5a68b328a8d69af833a861be415a17cb15ce3d8f0cd850073d2e1/python-dotenv-0.21.1.tar.gz"
+    sha256 "1c93de8f636cde3ce377292818d0e440b6e45a82f215c3744979151fa8151c49"
   end
 
   resource "PyYAML" do
@@ -85,8 +85,8 @@ class Ggshield < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/a5/61/a867851fd5ab77277495a8709ddda0861b28163c4613b011bc00228cc724/requests-2.28.1.tar.gz"
-    sha256 "7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"
+    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
+    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
   end
 
   resource "rich" do
@@ -105,8 +105,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
-    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
+    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
+    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
   end
 
   def install
