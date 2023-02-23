@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/b8/aa/7e2e57d809e2bf775d1ec7eece87ddcf9173f1f7e74ec4f5f2af3afa0f23/ggshield-1.14.3.tar.gz"
-  sha256 "3dda211d707263c5cff1538f2fc20bbc0e47a38e6ed779ab57ccd1ae14f33aa9"
+  url "https://files.pythonhosted.org/packages/29/82/535b2333b6e0173557df6d0b97b11a11f6e6c5722df746e52a3674d0d735/ggshield-1.14.4.tar.gz"
+  sha256 "7fe95e6e321d37c0ae49ef120268eadde47ff3159c9f7fa3f48fc7ccf00911fe"
   license "MIT"
 
   depends_on "python3"
@@ -50,8 +50,8 @@ class Ggshield < Formula
   end
 
   resource "mypy-extensions" do
-    url "https://files.pythonhosted.org/packages/63/60/0582ce2eaced55f65a4406fc97beba256de4b7a95a0034c6576458c6519f/mypy_extensions-0.4.3.tar.gz"
-    sha256 "2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"
+    url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"
+    sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
   end
 
   resource "oauthlib" do
@@ -95,8 +95,8 @@ class Ggshield < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/e3/a7/8f4e456ef0adac43f452efc2d0e4b242ab831297f1bac60ac815d37eb9cf/typing_extensions-4.4.0.tar.gz"
-    sha256 "1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa"
+    url "https://files.pythonhosted.org/packages/d3/20/06270dac7316220643c32ae61694e451c98f8caf4c8eab3aa80a2bedf0df/typing_extensions-4.5.0.tar.gz"
+    sha256 "5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"
   end
 
   resource "typing-inspect" do
