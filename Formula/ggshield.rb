@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/29/82/535b2333b6e0173557df6d0b97b11a11f6e6c5722df746e52a3674d0d735/ggshield-1.14.4.tar.gz"
-  sha256 "7fe95e6e321d37c0ae49ef120268eadde47ff3159c9f7fa3f48fc7ccf00911fe"
+  url "https://files.pythonhosted.org/packages/60/b8/439976c00f15f81b839177721fef3ee7e43387bf0598d14d307fdbf8a70e/ggshield-1.14.5.tar.gz"
+  sha256 "7e3781d5e00bfedb7d134a5948fcb293945ee5743d3893f8ea21403065af04de"
   license "MIT"
 
   depends_on "python3"
@@ -45,8 +45,8 @@ class Ggshield < Formula
   end
 
   resource "marshmallow-dataclass" do
-    url "https://files.pythonhosted.org/packages/bc/aa/7a61c424d6f4af1d05cb1b5df5b0f711faf04d586ad0787c4dd956732fd8/marshmallow_dataclass-8.5.11.tar.gz"
-    sha256 "b7b0ee28fa9e88edd00db324762848d3182fe5dba82c3b897cb525c402ffd143"
+    url "https://files.pythonhosted.org/packages/c9/0c/fdd0c342a32c53a8a0090f800d4d263d9dfd25a51904ed8892e371775a0d/marshmallow_dataclass-8.5.12.tar.gz"
+    sha256 "a59fe346cebc37b670ca68dbd44c56d9198d98a7ff3ebcb864c77b899eee5b6e"
   end
 
   resource "mypy-extensions" do
@@ -65,8 +65,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/3c/de/939a1f68a8e0499338ff2ffacdacc1279228657cc43aae93d2ac5e87c857/pygitguardian-1.5.0.tar.gz"
-    sha256 "0ec192536def0b9a70a68a770684d3b7eadff7b03257a92ab3efbcda70c59e60"
+    url "https://files.pythonhosted.org/packages/f2/8e/b863938d32d45d66afbe3ad07723692d87e58186f1bb1880a95ceb691930/pygitguardian-1.5.1.tar.gz"
+    sha256 "6a796702a25b2b1352576f0f557639cdff15d4a187ea59c181b09fab4dcc5c16"
   end
 
   resource "Pygments" do
@@ -105,8 +105,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   def install
