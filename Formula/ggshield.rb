@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/60/b8/439976c00f15f81b839177721fef3ee7e43387bf0598d14d307fdbf8a70e/ggshield-1.14.5.tar.gz"
-  sha256 "7e3781d5e00bfedb7d134a5948fcb293945ee5743d3893f8ea21403065af04de"
+  url "https://files.pythonhosted.org/packages/86/ec/983d74bd16f3155911979aab7916e9adb6d1dc386101870e598dc78f1f03/ggshield-1.15.0.tar.gz"
+  sha256 "5b41144d51dad6138d163d58382a5fb700adb399b056c5466e912df854932ca7"
   license "MIT"
 
   depends_on "python3"
@@ -45,8 +45,8 @@ class Ggshield < Formula
   end
 
   resource "marshmallow-dataclass" do
-    url "https://files.pythonhosted.org/packages/c9/0c/fdd0c342a32c53a8a0090f800d4d263d9dfd25a51904ed8892e371775a0d/marshmallow_dataclass-8.5.12.tar.gz"
-    sha256 "a59fe346cebc37b670ca68dbd44c56d9198d98a7ff3ebcb864c77b899eee5b6e"
+    url "https://files.pythonhosted.org/packages/5c/42/f3f6dbc21ae230a3cab7e2fdc0a8701751ea2832ef17e631bad159af48c5/marshmallow_dataclass-8.5.13.tar.gz"
+    sha256 "438196e119138a8d61d45ce763341fa0e1be5bf8ae12d52ae4562cfdbe68393c"
   end
 
   resource "mypy-extensions" do
@@ -60,18 +60,18 @@ class Ggshield < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/f2/8e/b863938d32d45d66afbe3ad07723692d87e58186f1bb1880a95ceb691930/pygitguardian-1.5.1.tar.gz"
-    sha256 "6a796702a25b2b1352576f0f557639cdff15d4a187ea59c181b09fab4dcc5c16"
+    url "https://files.pythonhosted.org/packages/8b/25/f8e1487820fe5db4dc1f3b7e7d21d74778978fb98499b34ff7b4aba38ebc/pygitguardian-1.6.0.tar.gz"
+    sha256 "f82b8bd6de359c9d566941eec60e9ed19a6ac5d40213b2cfd776c1e37f9aa801"
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/da/6a/c427c06913204e24de28de5300d3f0e809933f376e0b7df95194b2bb3f71/Pygments-2.14.0.tar.gz"
-    sha256 "b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"
+    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
+    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   end
 
   resource "python-dotenv" do
