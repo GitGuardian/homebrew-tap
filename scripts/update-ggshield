@@ -4,7 +4,10 @@ Update ggshield Homebrew formula
 """
 import argparse
 import json
+import hashlib
 import logging
+import re
+import shutil
 import sys
 import time
 
@@ -16,21 +19,59 @@ MAX_RETRIES = 5
 RETRY_INITIAL_INTERVAL = 10
 PYPI_URL = "https://pypi.org/pypi/ggshield/json"
 
-FORMULA_PATH = Path(__file__).parent / ".." / "Formula" / "ggshield.rb"
-DESCRIPTION = (
-    "Detect secrets in source code, scan your repos and docker images for leaks"
-)
-LICENSE = "MIT"
+REPO_DIR = Path(__file__).parent.parent
+FORMULA_PATH = REPO_DIR / "Formula" / "ggshield.rb"
+WORK_DIR = REPO_DIR / "work"
+
+GGSHIELD_REPO_URL = "https://github.com/GitGuardian/ggshield"
+
+FORMULA_TEMPLATE = """class Ggshield < Formula
+  include Language::Python::Virtualenv
+
+  desc "Detect secrets in source code, scan your repos and docker images for leaks"
+  homepage "https://github.com/GitGuardian/ggshield"
+  url "{url}"
+  sha256 "{sha256}"
+  license "MIT"
+
+  depends_on "python3"
+
+  {resources}
+
+  def install
+    virtualenv_create(libexec, "python3")
+    virtualenv_install_with_resources
+  end
+end
+"""
 
 
-def install_dependencies(version: str):
-    logging.info("Installing dependencies")
-    run(["pip", "install", "homebrew-pypi-poet", f"ggshield=={version}"], check=True)
+def build_sdist(commit_ref: str) -> Path:
+    """Builds an sdist, returns the path to the sdist"""
+    if WORK_DIR.exists():
+        shutil.rmtree(WORK_DIR)
+    WORK_DIR.mkdir()
+    logging.info("Cloning repository at %s", commit_ref)
+    run(["git", "clone", "--depth", "1", GGSHIELD_REPO_URL, "--branch", commit_ref, WORK_DIR], check=True)
+    logging.info("Building sdist")
+    run(["python", "setup.py", "sdist"], check=True, cwd=WORK_DIR)
+    return next(WORK_DIR.glob("dist/*.tar.gz"))
 
 
-def check_availability(version: str):
-    """Wait until pypi officially knows about the new version, otherwise poet
-    prints a warning and falls back on the previous version"""
+def compute_sha256sum(path: Path) -> str:
+    logging.info("Computing sha256sum")
+    hash_ = hashlib.new("sha256")
+    hash_.update(path.read_bytes())
+    return hash_.hexdigest()
+
+
+def install_dependencies(ggshield_pip_arg: str):
+    logging.info("Installing dependencies, (%s)", ggshield_pip_arg)
+    run(["pip", "install", "homebrew-pypi-poet", ggshield_pip_arg], check=True)
+
+
+def check_availability(version: str) -> tuple[str, str]:
+    """Find the package on pypi, returns a tuple of (url, sha256)"""
     retry = 1
     interval = RETRY_INITIAL_INTERVAL
     while True:
@@ -43,9 +84,13 @@ def check_availability(version: str):
         response = request.urlopen(PYPI_URL)
         dct = json.load(response)
         releases = dct["releases"]
-        if version in releases:
+        if release := releases[version]:
             logging.info("ggshield %s is available", version)
-            return
+            for artifact in release:
+                if artifact["packagetype"] == "sdist":
+                    return (artifact["url"], artifact["digests"]["sha256"])
+            logging.error("no sdist found for version %s", version)
+            sys.exit(3)
 
         if retry < MAX_RETRIES:
             logging.warning("Not available yet, waiting %d seconds", interval)
@@ -57,24 +102,24 @@ def check_availability(version: str):
             sys.exit(2)
 
 
-def update_formula():
+def update_formula(url: str, sha256: str):
     logging.info("Updating %s", FORMULA_PATH)
 
-    # Generate the new formula
-    proc = run(["poet", "--formula", "ggshield"], check=True, capture_output=True)
-    content = proc.stdout.decode("utf-8")
+    # Get resources
+    proc = run(["poet", "--resources", "ggshield"], check=True, capture_output=True)
+    resources = proc.stdout.decode("utf-8").strip()
 
-    # Replace description
-    content = content.replace("Shiny new formula", DESCRIPTION)
-    lines = content.split("\n")
+    # poet adds ggshield itself as a resource: remove it
+    resources, count = re.subn(
+        r'  resource "ggshield" do.*?end\n\n',
+        "",
+        resources,
+        flags=re.DOTALL,
+    )
+    assert count == 1
 
-    # Insert license line at the end of the first group. The group should end
-    # with a "sha256" entry
-    assert "sha256" in lines[6]
-    lines.insert(7, f'  license "{LICENSE}"')
-    content = "\n".join(lines)
-
-    # Write the result
+    # Fill the template and write the result
+    content = FORMULA_TEMPLATE.format(url=url, sha256=sha256, resources=resources)
     FORMULA_PATH.write_text(content)
 
 
@@ -91,18 +136,38 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter, description=__doc__
     )
     parser.add_argument("-c", "--commit", action="store_true", help="Commit changes")
-    parser.add_argument("version", help="ggshield version")
+    parser.add_argument(
+        "--from-git",
+        action="store_true",
+        help=(
+            "Instead of pulling from Pypi, checkout ggshield git repository,"
+            " build an sdist from it and use it for the package"
+        ),
+    )
+    parser.add_argument(
+        "version_or_commit_ref",
+        help="Version to package, or Git commit ref when called with --from-git",
+    )
     args = parser.parse_args()
 
     if not FORMULA_PATH.exists():
         logging.error("%s does not exist", FORMULA_PATH)
         sys.exit(1)
 
-    check_availability(args.version)
-    install_dependencies(args.version)
-    update_formula()
-    if args.commit:
-        commit_changes(args.version)
+    if args.from_git:
+        archive_path = build_sdist(args.version_or_commit_ref)
+        url = f"file://{archive_path}"
+        sha256 = compute_sha256sum(archive_path)
+        install_dependencies(str(archive_path))
+    else:
+        version = args.version_or_commit_ref
+        url, sha256 = check_availability(version)
+        install_dependencies(f"ggshield=={version}")
+
+    update_formula(url, sha256)
+
+    if not args.from_git and args.commit:
+        commit_changes(args.from_pypi)
 
     return 0
 
