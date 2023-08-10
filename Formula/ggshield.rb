@@ -9,6 +9,10 @@ class Ggshield < Formula
 
   depends_on "python3"
 
+  # The `cryptography` package needs these
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
@@ -70,8 +74,8 @@ class Ggshield < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
+    url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
+    sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
   end
 
   resource "PyJWT" do
@@ -120,6 +124,8 @@ class Ggshield < Formula
   end
 
   test do
-    false
+    # In an environment with no API key, `ggshield api-status` exits with
+    # status code 3 and tells the user to login
+    assert_match "ggshield auth login", shell_output("#{bin}/ggshield api-status 2>&1", 3)
   end
 end
