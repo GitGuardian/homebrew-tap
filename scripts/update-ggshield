@@ -36,6 +36,10 @@ FORMULA_TEMPLATE = """class Ggshield < Formula
 
   depends_on "python3"
 
+  # The `cryptography` package needs these
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+
   {resources}
 
   def install
