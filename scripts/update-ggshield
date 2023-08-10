@@ -142,6 +142,8 @@ def commit_changes(version: str):
 def main():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt='%H:%M:%S')
 
+    # Be careful when changing the arguments here: this script is used by the
+    # tag.yml workflow of ggshield
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter, description=__doc__
     )
