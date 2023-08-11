@@ -1,0 +1,32 @@
+name: update-ggshield
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_git:
+        type: boolean
+        description: "--from-git: Build from ggshield git repository"
+        required: true
+      version_or_commit_ref:
+        description: "Version to package, or Git commit ref when called with --from-git"
+        required: true
+
+jobs:
+  update-ggshield:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update formula
+        run: |
+          args=${{ inputs.version_or_commit_ref }}
+          if [ "${{ inputs.from_git }}" = true ] ; then
+              args="$args --from-git"
+          fi
+          scripts/update-ggshield $args
+
+      - name: Build
+        run: brew install --verbose Formula/ggshield.rb
+
+      - name: Smoke test
+        run: brew test Formula/ggshield.rb
