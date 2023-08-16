@@ -179,7 +179,7 @@ def main():
     update_formula(url, sha256)
 
     if not args.from_git and args.commit:
-        commit_changes(args.from_pypi)
+        commit_changes(args.version_or_commit_ref)
 
     return 0
 
