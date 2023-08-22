@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/51/e2/bb35236e94f8aa1fafdd70767ff0212fc49ced21501833cde030df86c13f/ggshield-1.18.0.tar.gz"
-  sha256 "478dae8af0952f1e3737157ddc7534a7bdc20e64996198a5d6692057a272a520"
+  url "https://files.pythonhosted.org/packages/c9/e5/04dbf6f43451083b60257b6039d05b9665918030bec087e636e4886e76e8/ggshield-1.18.1.tar.gz"
+  sha256 "62a719947d2bf6c8e1f9c92c033fe8cbfe7b7d527cc252eedaffd91c77d63b84"
   license "MIT"
 
   depends_on "python3"
@@ -34,8 +34,8 @@ class Ggshield < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "commonmark" do
