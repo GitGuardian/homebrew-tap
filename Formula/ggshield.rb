@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/c9/e5/04dbf6f43451083b60257b6039d05b9665918030bec087e636e4886e76e8/ggshield-1.18.1.tar.gz"
-  sha256 "62a719947d2bf6c8e1f9c92c033fe8cbfe7b7d527cc252eedaffd91c77d63b84"
+  url "https://files.pythonhosted.org/packages/39/a6/de6ac27c814ef78b35ea0fbe3d997f244dd5ec24176ad0d7e060e1c91f00/ggshield-1.19.1.tar.gz"
+  sha256 "5e6059a97b2e567e4f1f9e874e2791e4c6116ba8e9e9bf8787f07b16c49587f3"
   license "MIT"
 
   depends_on "python3"
@@ -44,8 +44,8 @@ class Ggshield < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
+    url "https://files.pythonhosted.org/packages/ef/33/87512644b788b00a250203382e40ee7040ae6fa6b4c4a31dcfeeaa26043b/cryptography-41.0.4.tar.gz"
+    sha256 "7febc3094125fc126a7f6fb1f420d0da639f3f32cb15c8ff0dc3997c4549f51a"
   end
 
   resource "idna" do
@@ -84,8 +84,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/8b/e9/67ddf8ca425734da72d073f583d732e9325be90c2913fd1052678d67b246/pygitguardian-1.9.0.tar.gz"
-    sha256 "d58795bdfc0cdf3b67f45cc3a4e135223ccd8e4d38abc3899b387a664fe247a1"
+    url "https://files.pythonhosted.org/packages/df/f2/779757cbad2126121c2411fb06835b54c91176ff75ed0ffa2c48a10c4d60/pygitguardian-1.10.0.tar.gz"
+    sha256 "b9bee1170e13c322179dc2f8ab27aee2a046f459047b47d3edee850c5930192c"
   end
 
   resource "Pygments" do
@@ -119,8 +119,8 @@ class Ggshield < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/3c/8b/0111dd7d6c1478bf83baa1cab85c686426c7a6274119aceb2bd9d35395ad/typing_extensions-4.7.1.tar.gz"
-    sha256 "b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2"
+    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
+    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "typing-inspect" do
@@ -129,8 +129,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/51/13/62cb4a0af89fdf72db4a0ead8026e724c7f3cbf69706d84a4eff439be853/urllib3-2.0.5.tar.gz"
+    sha256 "13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594"
   end
 
   def install
