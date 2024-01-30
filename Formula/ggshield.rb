@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/60/f0/314addb6729a0df93711776cf72f0e7e83294832342015d5f99965e00932/ggshield-1.23.0.tar.gz"
-  sha256 "4f2e41f41df0ad561dd6950bce4b4ba34d340662b5fbf7af2c2b1103d6f4e0d5"
+  url "https://files.pythonhosted.org/packages/0f/45/23c2a9ebd629b0eb35ad6668bc4269d57814ba8128db901d298216962af7/ggshield-1.24.0.tar.gz"
+  sha256 "a002616548e8b2b5ba08bd6cfab4fa94448649cd2e5adc604f01672443f4b040"
   license "MIT"
 
   depends_on "python3"
@@ -12,11 +12,6 @@ class Ggshield < Formula
   # The `cryptography` package needs these
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-
-  resource "appdirs" do
-    url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
-    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/d4/91/c89518dd4fe1f3a4e3f6ab7ff23cb00ef2e8c9adf99dacc618ad5e068e28/certifi-2023.11.17.tar.gz"
@@ -78,14 +73,19 @@ class Ggshield < Formula
     sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/11/39/702094fc1434a4408783b071665d9f5d8a1d0ba4dddf9dadf3d50e6eb762/platformdirs-3.0.0.tar.gz"
+    sha256 "8a1228abb1ef82d788f74139988b137e78692984ec7b08eaa6c65f1723af28f9"
+  end
+
   resource "pycparser" do
     url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/e8/c7/bed756cceef784e8cc676dcd6e91fdc4644a3b8b9878fb1b4dff8e27d18b/pygitguardian-1.12.0.tar.gz"
-    sha256 "abb0315b1b89bc681ae7fc2a953da046725d8b4654253685491b9c6c4921bcd7"
+    url "https://files.pythonhosted.org/packages/1a/d7/9f2c50e1b20d768b0e47c0613186709aeadfe779cff2c6a6c9159561d28c/pygitguardian-1.13.0.tar.gz"
+    sha256 "db2030e409373c4ee38a59a9a098e1910d2e5788d1416a5d3c2e0f44e1975d86"
   end
 
   resource "Pygments" do
