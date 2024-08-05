@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/8e/d5/03c543a6bf4c00ecf99826ed273ef7355b9e43b5113a1f54b4f6f96dfd2d/ggshield-1.30.1.tar.gz"
-  sha256 "1c9523c5c0cb0a42faf24ea6a4fdacdef3bcfb7a34d4d7234b8b70b979be641b"
+  url "https://files.pythonhosted.org/packages/dc/7c/6b3b6ad2ff8b87930112e939814fa622e229ba918408d26a1aae491ce20a/ggshield-1.30.2.tar.gz"
+  sha256 "81b96feeac81675ef917807576a9e2a36df748a2a33b3e444cc0a6e9b98e1ffb"
   license "MIT"
 
   depends_on "python3"
