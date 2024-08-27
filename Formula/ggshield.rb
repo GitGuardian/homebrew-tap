@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/dc/7c/6b3b6ad2ff8b87930112e939814fa622e229ba918408d26a1aae491ce20a/ggshield-1.30.2.tar.gz"
-  sha256 "81b96feeac81675ef917807576a9e2a36df748a2a33b3e444cc0a6e9b98e1ffb"
+  url "https://files.pythonhosted.org/packages/df/1f/4fef6963ac9846a88a033a633e369a04d06ad3b77bfc7939afade16aadb9/ggshield-1.31.0.tar.gz"
+  sha256 "42d83d2b117e02c813740eee1a045803e742d19b5b893528881de793409f39b2"
   license "MIT"
 
   depends_on "python3"
@@ -19,8 +19,8 @@ class Ggshield < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz"
-    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
+    url "https://files.pythonhosted.org/packages/1e/bf/82c351342972702867359cfeba5693927efe0a8dd568165490144f554b18/cffi-1.17.0.tar.gz"
+    sha256 "f3157624b7558b914cb039fd1af735e5e8049a87c817cc215109ad1c8779df76"
   end
 
   resource "charset-normalizer" do
@@ -44,8 +44,8 @@ class Ggshield < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https://files.pythonhosted.org/packages/e8/ac/e349c5e6d4543326c6883ee9491e3921e0d07b55fdf3cce184b40d63e72a/idna-3.8.tar.gz"
+    sha256 "d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"
   end
 
   resource "marshmallow" do
@@ -104,8 +104,8 @@ class Ggshield < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "requests" do
