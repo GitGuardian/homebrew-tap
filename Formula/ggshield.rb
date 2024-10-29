@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/8f/7c/94f61e5a8bc4a8bfa4667c05395d0b0d3530ab794d2009bdde686ac47a50/ggshield-1.32.2.tar.gz"
-  sha256 "094aa8ed89e30dca750586bf608180edf053bdfd5ced9046e20f85426501f82e"
+  url "https://files.pythonhosted.org/packages/f2/bd/333890c00e3e91a7c35709ada1eec80e7cb05010f6a351dc100dc1a50192/ggshield-1.33.0.tar.gz"
+  sha256 "722f35f696b99ede1ee14cc469b61784d58f7f08c3a9b3d7d71e6e1107dc54d2"
   license "MIT"
 
   depends_on "python3"
@@ -39,8 +39,8 @@ class Ggshield < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/de/ba/0664727028b37e249e73879348cc46d45c5c1a2a2e81e8166462953c5755/cryptography-43.0.1.tar.gz"
-    sha256 "203e92a75716d8cfb491dc47c79e17d0d9207ccffcbcb35f598fbe463ae3444d"
+    url "https://files.pythonhosted.org/packages/0d/05/07b55d1fa21ac18c3a8c79f764e2514e6f6a9698f1be44994f5adf0d29db/cryptography-43.0.3.tar.gz"
+    sha256 "315b9001266a492a6ff443b61238f956b214dbec9910a081ba5b6646a055a805"
   end
 
   resource "idna" do
