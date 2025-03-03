@@ -3,8 +3,8 @@ class Ggshield < Formula
 
   desc "Detect secrets in source code, scan your repos and docker images for leaks"
   homepage "https://github.com/GitGuardian/ggshield"
-  url "https://files.pythonhosted.org/packages/fa/eb/8ae07cf33721d4955ad693813bb94e47772d468080ba460cf2bb54b49332/ggshield-1.36.0.tar.gz"
-  sha256 "900784e35da2dcdb15188f8c4620feaf631351eb0c5d791e0e80a12bb1113e30"
+  url "https://files.pythonhosted.org/packages/68/5b/0211edd34b373ce9236d5b6f76955ecb0df2b62df53a9e709f1a6339eb6a/ggshield-1.37.0.tar.gz"
+  sha256 "81490409a3932c0ce3b9faf12b4120c2c41f772ad9240b1a07f3e256a69008b2"
   license "MIT"
 
   depends_on "python3"
@@ -14,8 +14,8 @@ class Ggshield < Formula
   depends_on "rust" => :build
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/0f/bd/1d41ee578ce09523c81a15426705dd20969f5abf006d1afe8aeff0dd776a/certifi-2024.12.14.tar.gz"
-    sha256 "b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db"
+    url "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz"
+    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
   end
 
   resource "cffi" do
@@ -84,8 +84,8 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/3c/3d/cf83effe77cdc924888046a44504922df38fb8140f7c877cfe99611a2f7e/pygitguardian-1.19.0.tar.gz"
-    sha256 "1348a7e3eeab2219aecea76015710d87122fd580146e888f335bfc4af90048db"
+    url "https://files.pythonhosted.org/packages/62/b9/95c8e25686d8cd53d68d50f307bbce96adcaae9f8c465ca0d1fea6a7ecfd/pygitguardian-1.20.0.tar.gz"
+    sha256 "483a250c2fea3c26d2972630052f59574964ee1fef5297fae3a8e6bd5e24a04c"
   end
 
   resource "Pygments" do
